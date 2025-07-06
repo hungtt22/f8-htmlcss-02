@@ -1,10 +1,11 @@
 * {
     box-sizing: border-box;
 }
-/* :root {
+:root {
     --font-heading: Sen, sans-serif;
-    --primary-color: ;
-} */
+    --primary-color: #ffb900;
+    --second-color: #171100;
+}
 html {
     font-size: 62.5%;
     /* Dùng 62.5% thay vì dùng 10px vì khi người dùng tăng font-size trong trình duyệt thì % sẽ co giãn theo
@@ -14,6 +15,7 @@ body {
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
 }
+
 /* Common */
 .main-content {
     width: 1170px;
@@ -28,12 +30,42 @@ body {
     font-size: 1.4rem;
     font-weight: 600;
     text-align: center;
-    background: #ffb900;
+    background: var(--primary-color);
     border-radius: 999px;
     color: #fff;
 }
+.btn:hover {
+    opacity: 0.9;
+}
 a {
     text-decoration: none;
+}
+.heading {
+    color: var(--second-color);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+.heading.lv1 {
+    font-size: 5.8rem;
+    line-height: 1.17;
+    letter-spacing: -1.16px;
+}
+.heading.lv2 {
+    font-size: 3.8rem;
+    line-height: 1.26;
+    letter-spacing: -0.76px;
+}
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.line-2 {
+    --line-clamp: 2;
+}
+.break-all {
+    word-break: break-all;
 }
 /* Header */
 .header.fixed {
@@ -65,13 +97,13 @@ a {
     line-height: 1.75;
 }
 .header .nav a:hover {
-    color: #171100;
+    color: var(--second-color);
     /* font-weight: 600; */
     text-shadow: 1px 0 0 currentColor;
 }
 .header .nav .active a {
     position: relative;
-    color: #171100;
+    color: var(--second-color);
     text-align: center;
     font-size: 1.6rem;
     font-weight: 600;
@@ -86,14 +118,14 @@ a {
     width: 12px;
     height: 2px;
     border-radius: 1px;
-    background: #171100;
+    background: var(--second-color);
 }
 .header .action {
     margin-left: 49px;
 }
 .header .action .btn {
     min-width: 144px;
-    background-color: #171100;
+    background-color: var(--second-color);
     font-size: 1.6rem;
 }
 
@@ -106,6 +138,7 @@ a {
 .hero .body {
     display: flex;
 }
+
 /* Block Left */
 .hero .media-block {
     position: relative;
@@ -160,24 +193,18 @@ a {
     line-height: 1.85;
 }
 .hero-summary .item .info .title {
-    color: #171100;
+    color: var(--second-color);
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.66;
 }
+
 /* Block Right */
 .hero .content-block {
     /* width: 52%; */
     margin-left: 230px;
 }
-.hero .content-block .heading {
-    color: #171100;
-    font-family: Sen;
-    font-size: 5.8rem;
-    font-weight: 700;
-    line-height: 1.17;
-    letter-spacing: -1.16px;
-}
+
 .hero .content-block .desc {
     margin-top: 22px;
     color: #5f5b53;
@@ -213,7 +240,7 @@ a {
 }
 .hero .content-block .cta-group .watch-video span {
     margin-left: 14px;
-    color: #171100;
+    color: var(--second-color);
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.66; /* 166.667% */
@@ -223,12 +250,118 @@ a {
 }
 .hero .stats strong {
     padding-right: 8px;
-    color: #171100;
-    font-family: Sen;
+    color: var(--second-color);
+    font-family: var(--font-heading);
     font-size: 4.4rem;
     font-weight: 700;
     line-height: 1.22;
 }
 .hero .stats strong + strong {
     margin-left: 26px;
+}
+
+/* Popular */
+.popular {
+    padding: 65px 0;
+    margin-top: 135px;
+}
+/* Popular-top */
+.popular-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.popular-top .info .desc {
+    width: 458px;
+    margin-top: 16px;
+    color: #5f5b53;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.66;
+}
+.popular-top .controls {
+    display: flex;
+    gap: 18px;
+}
+.popular .controls .control-btn {
+    width: 40px;
+    height: 40px;
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popular .controls .control-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+/* Popular-bottom */
+.popular-bottom {
+    margin-top: 55px;
+    display: flex;
+    gap: 30px;
+}
+.popular-bottom .course-item {
+    flex: 1;
+    border-radius: 12px;
+    border: 1px solid #e2dfda;
+    background: #fff;
+}
+.popular-bottom .course-item:hover {
+    border-color: transparent;
+    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+}
+.popular-bottom .course-item .thumb {
+    width: calc(100% + 2px);
+    height: 278px;
+    margin: -1px;
+    object-fit: cover;
+    border-radius: 12px 12px 0px 0px;
+}
+.popular-bottom .course-item .info {
+    padding: 16px 22px 22px;
+}
+.popular-bottom .course-item .head,
+.foot,
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.popular-bottom .course-item .title a {
+    padding-right: 6px;
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+}
+.popular-bottom .rating .value {
+    margin-left: 6px;
+    color: #fea31b;
+    font-size: 1.6rem;
+    line-height: 1.75;
+}
+.popular-bottom .course-item .desc {
+    width: 297px;
+    margin-top: 6px;
+    color: #5f5b53;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+.popular-bottom .course-item .foot {
+    margin-top: 12px;
+}
+.popular-bottom .foot .price {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.66;
+}
+.popular-bottom .foot .book-btn {
+    padding: 18px 16px;
+    background-color: var(--second-color);
+}
+.popular-bottom .foot .book-btn:hover {
+    background-color: var(--primary-color);
 }

@@ -67,7 +67,7 @@ a {
 .break-all {
     word-break: break-all;
 }
-/* Header */
+/* ========== Header ========== */
 .header.fixed {
     position: sticky;
     top: -28px;
@@ -129,7 +129,7 @@ a {
     font-size: 1.6rem;
 }
 
-/* Hero */
+/* ========== Hero ========== */
 .hero {
     padding-top: 56px;
     padding-bottom: 65px;
@@ -260,7 +260,7 @@ a {
     margin-left: 26px;
 }
 
-/* Popular */
+/* ========== Popular ========== */
 .popular {
     padding: 65px 0;
     margin-top: 135px;
@@ -364,4 +364,68 @@ a {
 }
 .popular-bottom .foot .book-btn:hover {
     background-color: var(--primary-color);
+}
+/* ========== Feedback ========== */
+.feedback {
+    margin-top: 135px;
+    padding: 96px 0;
+    background: #2e2100;
+}
+.feedback-list {
+    display: flex;
+    overflow: hidden;
+}
+.feedback-item {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    /* transform: translateX(-100%);
+    transition: all ease 0.3s; */
+    /* Dùng để trượt qua 1 feedback-item khác */
+}
+.feedback-item .info .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.feedback-item .info .title {
+    margin-top: 18px;
+    color: #f7f7f7;
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.42;
+}
+.feedback-item .info .desc {
+    margin-top: 4px;
+    color: #bfbcb2;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+.feedback-item .dots {
+    margin-top: 28px;
+    display: flex;
+
+    gap: 6px;
+}
+.feedback-item .dots .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #634700;
+}
+.feedback-item .dots .dot.active {
+    background-color: var(--primary-color);
+}
+.feedback .content {
+    width: 66%;
+}
+.feedback .content blockquote {
+    margin-left: 30px;
+    color: #fff;
+    font-size: 2.6rem;
+    font-style: italic;
+    line-height: 1.54;
 }
